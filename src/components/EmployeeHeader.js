@@ -5,6 +5,7 @@ import {GiPoliceOfficerHead} from 'react-icons/gi';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { MdOutlineBusAlert } from 'react-icons/md';
 import {GiSandsOfTime} from 'react-icons/gi';
+import {RiSecurePaymentLine} from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import './PassengerHeader.css';
 
@@ -65,6 +66,12 @@ const EmployeeHeader = () => {
                         {/*icon */}
                         <MdOutlineBusAlert className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
                         <Link to='/' className='transition4'>Manage Bus</Link>
+                    </li>
+
+                    <li>
+                        {/*icon */}
+                        <RiSecurePaymentLine className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
+                        <Link to='/' className='transition4'>Local Payments</Link>
                     </li>
 
                 </ul>
