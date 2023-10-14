@@ -70,8 +70,8 @@ const EmployeeHeader = () => {
 
                     <li>
                         {/*icon */}
-                        <RiSecurePaymentLine className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition4'>Local Payments</Link>
+                        <RiSecurePaymentLine className='icon' onClick={() => handleIconClick('/EmployeeLocalPay')}/> {/*link */}
+                        <Link to='/EmployeeLocalPay' className='transition4'>Local Payments</Link>
                     </li>
 
                 </ul>

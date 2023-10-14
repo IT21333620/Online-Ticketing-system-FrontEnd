@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../components/PassengerHeader'
+import ResponsiveAppBar from '../components/ResponsiveAppBar'
 
 const UserDash = () => {
-  return (
-    <div>
+    return (<div>
+        <ResponsiveAppBar/>
         <Header/>
-    </div>
-  )
+    </div>)
 }
 
 export default UserDash
