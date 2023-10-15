@@ -1,17 +1,17 @@
-import {useState,useRef,useEffect} from 'react'
+import { Button, Container, Grid, Typography } from '@mui/material'
+import Box from '@mui/material/Box'
+import Divider from '@mui/material/Divider'
+import FormControl from '@mui/material/FormControl'
+import FormControlLabel from '@mui/material/FormControlLabel'
+import FormLabel from '@mui/material/FormLabel'
+import Radio from '@mui/material/Radio'
+import RadioGroup from '@mui/material/RadioGroup'
+import TextField from '@mui/material/TextField'
+import axios from 'axios'
+import { useState } from 'react'
+import Swal from 'sweetalert2'
 import PassengerHeader from '../components/PassengerHeader'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
-import {Container, Grid,Typography, Button} from '@mui/material'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-import Divider from '@mui/material/Divider';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
-import Swal from 'sweetalert2'
-import axios from 'axios';
 
 const PassengerOnlinePayment = () => {
     const currentDate = new Date();
