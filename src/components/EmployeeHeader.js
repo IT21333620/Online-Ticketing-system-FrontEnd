@@ -58,8 +58,8 @@ const EmployeeHeader = () => {
 
                     <li>
                         {/*icon */}
-                        <GiPoliceOfficerHead className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition4'>Assign Inspector</Link>
+                        <GiPoliceOfficerHead className='icon' onClick={() => handleIconClick('/AssignInspectorDashBoard')}/> {/*link */}
+                        <Link to='/AssignInspectorDashBoard' className='transition4'>Assign Inspector</Link>
                     </li>
 
                     <li>
