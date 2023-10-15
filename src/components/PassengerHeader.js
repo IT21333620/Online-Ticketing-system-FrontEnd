@@ -49,8 +49,8 @@ const PassengerHeader = () => {
 
                     <li>
                         {/*icon */}
-                        <RiWechatPayFill className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition4'>Recharge</Link>
+                        <RiWechatPayFill className='icon' onClick={() => handleIconClick('/PassengerOnlinePayment')}/> {/*link */}
+                        <Link to='/PassengerOnlinePayment' className='transition4'>Recharge</Link>
                     </li>
 
                 </ul>

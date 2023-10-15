@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import PassengerDashboard from './pages/PassengerDashboard';
 import EmployeeDashboard from './pages/EmployeeDashboard';
 import EmployeeLocalPay from './pages/EmployeeLocalPay';
+import PassengerOnlinePayment from './pages/PassengerOnlinePayment';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path='/PassengerDashboard' element={<PassengerDashboard/>}></Route>
         <Route path='/EmployeeDashboard' element={<EmployeeDashboard/>}></Route>
         <Route path='/EmployeeLocalPay' element={<EmployeeLocalPay/>}></Route>
+        <Route path='/PassengerOnlinePayment' element={<PassengerOnlinePayment/>}></Route>
       </Routes>
     </Router>
   );
