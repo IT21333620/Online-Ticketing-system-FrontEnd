@@ -7,6 +7,7 @@ import AssignInspectorDashboard from './pages/AssignInspectorDashboard';
 import AssignInspector from './pages/AssignInspector';
 import InspectorDetails from './pages/InspectorDetails';
 import EditInspectDetails from './pages/EditInspectDetails';
+import PassengerOnlinePayment from './pages/PassengerOnlinePayment';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/AssignInspector' element={<AssignInspector/>}></Route>
         <Route path='/InspectorDetails' element={<InspectorDetails/>}></Route>
         <Route path='/EditInspectDetails'element={<EditInspectDetails/>}></Route>
+        <Route path='/PassengerOnlinePayment' element={<PassengerOnlinePayment/>}></Route>
       </Routes>
     </Router>
   );
