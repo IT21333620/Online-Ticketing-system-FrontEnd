@@ -24,9 +24,9 @@ const EmployeeLocalPay = () => {
     
     
 
-    const handleSubmit = async (e) => {
+      const handleSubmit = async (e) => {
         e.preventDefault();
-
+    
         const formData = {
             userID: document.getElementById('outlined-ID').value,
             branch: document.getElementById('outlined-Branch Name').value,
@@ -35,8 +35,8 @@ const EmployeeLocalPay = () => {
             date: document.getElementById('outlined-Date').value,
             type: paymentType
         }
-
-        if (!formData.userID || !formData.branch || !formData.refNumber || !formData.amount || !formData.date || !formData.paymentType) {
+    
+        if (!formData.userID || !formData.branch || !formData.refNumber || !formData.amount || !formData.date || !paymentType) {
             // Display an error message or alert to the user
             Swal.fire({
                 title: 'Error',
@@ -44,32 +44,32 @@ const EmployeeLocalPay = () => {
                 icon: 'error',
             });
             return; // Exit the function without making the API request
-        }
-
-        try{
-            const response = await axios.post('http://localhost:8080/api/tickets/saveLocalPayment',formData);
-            console.log('Response:', response);
-
-            document.getElementById('outlined-ID').value = '';
-            document.getElementById('outlined-Branch Name').value = '';
-            document.getElementById('outlined-Referance Number').value = 'REFXXX';
-            document.getElementById('outlined-Amount').value = '';
-            document.getElementById('outlined-Date').value = formattedCurrentDate;
-            setpaymentType('');
-
-            const amount = formData.amount;
-            const userID = formData.userID;
-
-            const balanceUpdateResponse = await axios.put(`http://localhost:8080/api/tickets/updateBalance/${amount}/${userID}`);
-            console.log('Balance Updated',balanceUpdateResponse);
-
+        } else {
+            try {
+                const response = await axios.post('http://localhost:8080/api/tickets/saveLocalPayment', formData);
+                console.log('Response:', response);
+    
+                document.getElementById('outlined-ID').value = '';
+                document.getElementById('outlined-Branch Name').value = '';
+                document.getElementById('outlined-Referance Number').value = 'REFXXX';
+                document.getElementById('outlined-Amount').value = '';
+                document.getElementById('outlined-Date').value = formattedCurrentDate;
+                setpaymentType('');
+    
+                const amount = formData.amount;
+                const userID = formData.userID;
+    
+                const balanceUpdateResponse = await axios.put(`http://localhost:8080/api/tickets/updateBalance/${amount}/${userID}`);
+                console.log('Balance Updated', balanceUpdateResponse);
+    
                 Swal.fire({
-                  title: 'Payment Success!',
-                  text: 'Balance updated successfully.',
-                  icon: 'success',
+                    title: 'Payment Success!',
+                    text: 'Balance updated successfully.',
+                    icon: 'success',
                 });
-        }catch(error){
-            console.log('Error:', error);
+            } catch (error) {
+                console.log('Error:', error);
+            }
         }
     }
 
