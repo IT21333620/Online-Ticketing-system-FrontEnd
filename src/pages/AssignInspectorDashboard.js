@@ -9,6 +9,8 @@ import AssignBtn from '../components/AssignBtn'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Container from '@mui/material/Container';
 import './AssignInspectorDashboard.css';
+import { Link } from 'react-router-dom';
+
 
 
 const AssignInspectorDashboard = () => {
@@ -30,7 +32,9 @@ const AssignInspectorDashboard = () => {
             <Grid xs={5}
                   md={3}
                   xl={1}>
-              <AssignBtn sx={{justifyContent: 'right'}}/>
+              <Link to="/AssignInspector">
+                <AssignBtn sx={{justifyContent: 'right'}}/>
+              </Link>
             </Grid>
           </Grid>
         </Container>
