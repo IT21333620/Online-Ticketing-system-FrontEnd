@@ -47,13 +47,13 @@ const EmployeeHeader = () => {
                     <li>
                         {/*icon */}
                         <GiSandsOfTime className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition2'>TimeTable</Link>
+                        <Link to='/DisplayWholeTimeTable' className='transition2'>TimeTable</Link>
                     </li>
 
                     <li>
                         {/*icon */}
                         <FaBusAlt className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition3'>Assign Bus</Link>
+                        <Link to='/DisplayCrowded' className='transition3'>Assign Bus</Link>
                     </li>
 
                     <li>
