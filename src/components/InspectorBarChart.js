@@ -1,5 +1,6 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
+
 
 const chartSetting = {
     xAxis: [
@@ -10,103 +11,47 @@ const chartSetting = {
     width: 500,
     height: 400,
   };
-  const dataset = [
-    {
-      london: 59,
-      paris: 57,
-      newYork: 86,
-      seoul: 21,
-      month: 'Jan',
-    },
-    {
-      london: 50,
-      paris: 52,
-      newYork: 78,
-      seoul: 28,
-      month: 'Fev',
-    },
-    {
-      london: 47,
-      paris: 53,
-      newYork: 106,
-      seoul: 41,
-      month: 'Mar',
-    },
-    {
-      london: 54,
-      paris: 56,
-      newYork: 92,
-      seoul: 73,
-      month: 'Apr',
-    },
-    {
-      london: 57,
-      paris: 69,
-      newYork: 92,
-      seoul: 99,
-      month: 'May',
-    },
-    {
-      london: 60,
-      paris: 63,
-      newYork: 103,
-      seoul: 144,
-      month: 'June',
-    },
-    {
-      london: 59,
-      paris: 60,
-      newYork: 105,
-      seoul: 319,
-      month: 'July',
-    },
-    {
-      london: 65,
-      paris: 60,
-      newYork: 106,
-      seoul: 249,
-      month: 'Aug',
-    },
-    {
-      london: 51,
-      paris: 51,
-      newYork: 95,
-      seoul: 131,
-      month: 'Sept',
-    },
-    {
-      london: 60,
-      paris: 65,
-      newYork: 97,
-      seoul: 55,
-      month: 'Oct',
-    },
-    {
-      london: 67,
-      paris: 64,
-      newYork: 76,
-      seoul: 48,
-      month: 'Nov',
-    },
-    {
-      london: 61,
-      paris: 70,
-      newYork: 103,
-      seoul: 25,
-      month: 'Dec',
-    },
-  ];
-  
+
   const valueFormatter = (value) => `${value}mm`;
   
   export default function InspectorBarChart() {
-    return (
-      <BarChart
-        dataset={dataset}
-        yAxis={[{ scaleType: 'band', dataKey: 'month', label:'Routes', labelMargin: 10 }]}
-        series={[{ dataKey: 'seoul', label: 'Today Inspectors', valueFormatter }]}
-        layout="horizontal"
-        {...chartSetting}
-      />
-    );
+    const [dataset, setDataset] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:8080/api/Inspect/countTodayInspectors')
+      .then(response => response.json())
+      .then(data => {
+        const mappedData = Object.entries(data).map(([route, number]) => ({ route, number }));
+        setDataset(mappedData);
+        setLoading(false);
+      })
+      .catch(error => {
+        setError(error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
   }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  return (
+    <div>
+      {dataset.length > 0 && (
+        <BarChart
+          dataset={dataset}
+          yAxis={[{ scaleType: 'band', dataKey: 'route', label: 'Routes', labelMargin: 10 }]}
+          series={[{ dataKey: 'number', label: 'Today Inspectors', valueFormatter }]}
+          layout="horizontal"
+          {...chartSetting} // Assuming chartSetting is defined elsewhere
+        />
+      )}
+    </div>
+  );
+};
