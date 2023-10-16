@@ -1,9 +1,9 @@
 import React from 'react'
-import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import EmployeeHeader from '../components/EmployeeHeader'
-import InspectProfile from '../components/InspectorProfile'
 import HistoryBtn from '../components/HistoryBtn'
 import InspectTimeline from '../components/InspectTimeline'
+import InspectProfile from '../components/InspectorProfile'
+import ResponsiveAppBar from '../components/ResponsiveAppBar'
 
 
 

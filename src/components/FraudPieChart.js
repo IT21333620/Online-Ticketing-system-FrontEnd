@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { PieChart, pieArcClasses } from '@mui/x-charts/PieChart';
-import Typography from '@mui/material/Typography';
 import axios from 'axios';
+import Typography from '@mui/material/Typography';
+import { PieChart, pieArcClasses } from '@mui/x-charts/PieChart';
+import React, { useEffect, useState } from 'react';
 
 const FraudPieChart = () => {
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { DataGrid } from "@mui/x-data-grid";
+import React, { useEffect, useState } from 'react';
 
 
 export default function InspectorTable() {
