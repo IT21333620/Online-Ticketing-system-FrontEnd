@@ -4,11 +4,11 @@ import Divider from '@mui/material/Divider';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
+import axios from 'axios';
 import React from 'react';
+import Swal from 'sweetalert2';
 import EmployeeHeader from '../components/EmployeeHeader';
 import ResponsiveAppBar from '../components/ResponsiveAppBar';
-import axios from 'axios';
-import Swal from 'sweetalert2';
 
 const EmployeeLocalPay = () => {
     const currentDate = new Date();

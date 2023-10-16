@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { AiFillDashboard } from 'react-icons/ai';
 import { FaBusAlt } from 'react-icons/fa';
-import {GiPoliceOfficerHead} from 'react-icons/gi';
+import { GiPoliceOfficerHead, GiSandsOfTime } from 'react-icons/gi';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { MdOutlineBusAlert } from 'react-icons/md';
-import {GiSandsOfTime} from 'react-icons/gi';
-import {RiSecurePaymentLine} from 'react-icons/ri';
+import { RiSecurePaymentLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import './PassengerHeader.css';
 

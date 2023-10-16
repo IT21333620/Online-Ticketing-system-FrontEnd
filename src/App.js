@@ -1,11 +1,11 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import PassengerDashboard from './pages/PassengerDashboard';
+import { UserProvider } from './UserContext';
 import EmployeeDashboard from './pages/EmployeeDashboard';
 import EmployeeLocalPay from './pages/EmployeeLocalPay';
-import PassengerOnlinePayment from './pages/PassengerOnlinePayment';
+import PassengerDashboard from './pages/PassengerDashboard';
 import PassengerLogin from './pages/PassengerLogin';
-import { UserProvider } from './UserContext';
+import PassengerOnlinePayment from './pages/PassengerOnlinePayment';
 
 function App() {
   return (
