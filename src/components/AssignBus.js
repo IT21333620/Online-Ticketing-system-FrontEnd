@@ -1,31 +1,38 @@
-import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { TextField, Select, MenuItem, Button } from '@mui/material';
-import {Table, TableHead, TableBody, TableRow, TableCell, TableContainer, Paper,} from '@mui/material';
-import EmployeeHeader from '../components/EmployeeHeader'
 import axios from 'axios';
-import './AssignBus.css';
+import EmployeeHeader from '../components/EmployeeHeader';
+import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import { useLocation } from 'react-router-dom';
+import {
+  Button,
+  MenuItem,
+  Paper,
+  Select,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  TextField
+} from '@mui/material';
+import './AssignBus.css';
+
 
 function AssignBus() {
   const location = useLocation();
   const { selectedRecords } = location.state || { selectedRecords: [] };
-
-  const [routeData, setRouteData] = useState([]);
-  const [busData, setBusData] = useState([]);
-  const [filteredBusData, setFilteredBusData] = useState([]);
-  const [timetableData, setTimetableData] = useState([]);
-
-  const [busID, setBusID] = useState({});
-  const [routeID, setRouteID] = useState({});
   const [allocatedTime, setAllocatedTime] = useState({});
   const [allocatedDay, setAllocatedDay] = useState({});
-
+  const [busData, setBusData] = useState([]);
+  const [busID, setBusID] = useState({});
+  const [filteredBusData, setFilteredBusData] = useState([]);
+  const [routeData, setRouteData] = useState([]);
+  
   useEffect(() => {
-    // Fetch route data
     const fetchRouteData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/route/getRoute');
+        const response = await axios.get('http://localhost:8080/api/v1/route/getRoute');//Fetch route data.
         const routeData = response.data;
         setRouteData(routeData);
       } catch (error) {
@@ -33,10 +40,9 @@ function AssignBus() {
       }
     };
 
-    // Fetch bus data
     const fetchBusData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/v1/bus/getBus');
+        const response = await axios.get('http://localhost:8080/api/v1/bus/getBus');//Fetch bus data.
         const busData = response.data;
         setBusData(busData);
         setFilteredBusData(busData.filter(bus => bus.routeNo === 0));
@@ -50,7 +56,7 @@ function AssignBus() {
   }, []);
 
   const handleSaveClick = () => {
-    // Display a SweetAlert confirmation dialog
+    //Display a SweetAlert confirmation alert.
     Swal.fire({
       title: 'Confirmation',
       text: 'This will notify the bus owners. Are you sure you want to save the timetable?',
@@ -60,7 +66,7 @@ function AssignBus() {
       cancelButtonText: 'Cancel',
     }).then((result) => {
       if (result.isConfirmed) {
-        // User clicked OK, proceed with saving and redirecting
+        //If clicked "OK" user will be redirected.
         selectedRecords.forEach(record => {
           const dataToSave = {
             busID: busID[record.scheduleNo],
@@ -70,7 +76,7 @@ function AssignBus() {
           };
 
           
-          axios.post('http://localhost:8080/api/v1/timetable/saveTimetable', dataToSave)
+          axios.post('http://localhost:8080/api/v1/timetable/saveTimetable', dataToSave)//Save timetable data.
             .then(response => {
               // Handle success
               console.log('Data saved successfully:', response.data);
@@ -81,7 +87,7 @@ function AssignBus() {
             });
         });
 
-        // After saving data, redirect to "/DisplayWholeTimeTable"
+        //After saving data, redirect the user to display the timetable.
         window.location.href = '/DisplayWholeTimeTable';
       }
     });
@@ -117,7 +123,7 @@ function AssignBus() {
                     id={`bus-id-${record.scheduleNo}`}
                     label="Bus ID"
                     variant="outlined"
-                    value={busID[record.scheduleNo] || ''} // Bind value to the state variable
+                    value={busID[record.scheduleNo] || ''}
                     onChange={(e) => setBusID({ ...busID, [record.scheduleNo]: e.target.value })}
                   >
                     {filteredBusData.map((bus) => (
@@ -139,7 +145,7 @@ function AssignBus() {
                     id={`allocated-time-${record.scheduleNo}`}
                     label="Allocated Time"
                     variant="outlined"
-                    value={allocatedTime[record.scheduleNo] || ''} // Bind value to the state variable
+                    value={allocatedTime[record.scheduleNo] || ''}
                     onChange={(e) => setAllocatedTime({ ...allocatedTime, [record.scheduleNo]: e.target.value })}
                   />
                 </TableCell>
@@ -158,7 +164,6 @@ function AssignBus() {
                     <MenuItem value="Friday">Friday</MenuItem>
                     <MenuItem value="Saturday">Saturday</MenuItem>
                     <MenuItem value="Sunday">Sunday</MenuItem>
-                    {/* Add more days as needed */}
                   </Select>
                 </TableCell>
               </TableRow>
