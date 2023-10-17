@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { AiFillDashboard } from 'react-icons/ai';
 import { FaBusAlt } from 'react-icons/fa';
-import {GiPoliceOfficerHead} from 'react-icons/gi';
+import { GiPoliceOfficerHead, GiSandsOfTime } from 'react-icons/gi';
 import { IoMdClose, IoMdMenu } from 'react-icons/io';
 import { MdOutlineBusAlert } from 'react-icons/md';
-import {GiSandsOfTime} from 'react-icons/gi';
-import {RiSecurePaymentLine} from 'react-icons/ri';
+import { RiSecurePaymentLine } from 'react-icons/ri';
 import { Link, useNavigate } from 'react-router-dom';
 import './PassengerHeader.css';
 
@@ -47,13 +46,13 @@ const EmployeeHeader = () => {
                     <li>
                         {/*icon */}
                         <GiSandsOfTime className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition2'>TimeTable</Link>
+                        <Link to='/DisplayWholeTimeTable' className='transition2'>TimeTable</Link>
                     </li>
 
                     <li>
                         {/*icon */}
                         <FaBusAlt className='icon' onClick={() => handleIconClick('/')}/> {/*link */}
-                        <Link to='/' className='transition3'>Assign Bus</Link>
+                        <Link to='/DisplayCrowded' className='transition3'>Assign Bus</Link>
                     </li>
 
                     <li>

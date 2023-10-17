@@ -37,8 +37,8 @@ const PassengerHeader = () => {
                         : 'ul-item oicon'}>
                     <li>
                         {/*icon */}
-                        <AiFillDashboard className='icon' onClick={() => handleIconClick('/PassengerDashboard')}/> {/*link */}
-                        <Link to='/PassengerDashboard' className='transition2'>Dashboard</Link>
+                        <AiFillDashboard className='icon' onClick={() => handleIconClick('/passengerDashboard')}/> {/*link */}
+                        <Link to='/passengerDashboard' className='transition2'>Dashboard</Link>
                     </li>
 
                     <li>

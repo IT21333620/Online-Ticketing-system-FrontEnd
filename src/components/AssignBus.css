@@ -1,0 +1,35 @@
+#Assign_bus_table{
+    width: 69%;
+    position: relative; left: 250px;
+}
+
+#assign-bus-heading{
+    position: relative; top: 60px; left: 100px;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#hr-header-assign-bus{
+    position: relative; top: 100px; left: 100px;
+}
+
+#assign-table{
+    position: relative; top: 150px; left: 100px;
+}
+
+#Selected-topic{
+    position: relative; left: 380px;
+}
+
+#crowded-para-1{
+    color: #8c8686;
+}
+
+#crowded-para-2{
+    color: #ffffff;
+}
+
+#save-timetable-btn{
+    position: relative; top: 250px; left: 100px;
+}
