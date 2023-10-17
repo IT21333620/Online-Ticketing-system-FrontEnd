@@ -1,8 +1,11 @@
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
-import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
-import PassengerDashboard from './pages/PassengerDashboard';
+import { UserProvider } from './UserContext';
 import EmployeeDashboard from './pages/EmployeeDashboard';
 import EmployeeLocalPay from './pages/EmployeeLocalPay';
+import PassengerDashboard from './pages/PassengerDashboard';
+import PassengerLogin from './pages/PassengerLogin';
+import PassengerOnlinePayment from './pages/PassengerOnlinePayment';
 import AssignInspectorDashboard from './pages/AssignInspectorDashboard';
 import AssignInspector from './pages/AssignInspector';
 import InspectorDetails from './pages/InspectorDetails';
@@ -13,6 +16,7 @@ import DisplayCrowded from './components/DisplayCrowded';
 import AssignBus from './components/AssignBus';
 import DisplayWholeTimeTable from './components/DisplayWholeTimeTable';
 import { UserProvider } from './UserContext';
+
 
 function App() {
   return (

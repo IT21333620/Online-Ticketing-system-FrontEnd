@@ -1,9 +1,9 @@
 import { Button, Container, Grid, TextField, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import axios from 'axios';
-import React, { useState, useContext } from 'react';
-import Swal from 'sweetalert2';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 import { useUser } from '../UserContext';
 
 const PassengerLogin = () => {

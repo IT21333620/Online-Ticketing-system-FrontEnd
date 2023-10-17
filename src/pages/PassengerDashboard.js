@@ -1,8 +1,7 @@
-import React, {useEffect, useState} from 'react';
-import Header from '../components/PassengerHeader'
-import ResponsiveAppBar from '../components/ResponsiveAppBar'
-import {useUser} from '../UserContext';
-import {Button, Container, Grid, Typography} from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import Header from '../components/PassengerHeader';
+import ResponsiveAppBar from '../components/ResponsiveAppBar';
 
 const UserDash = () => {
     const [passengerData, setPassengerData] = useState(null);
