@@ -47,8 +47,8 @@ export default function AssignForm() {
     axios.post('http://localhost:8080/api/Inspect/createInspect', formData)
     .then(response => {
       Swal.fire({
-        title: 'Payment Success!',
-        text: 'Balance updated successfully.',
+        title: 'Assign Success!',
+        text: 'Inspector Assigned successfully.',
         icon: 'success',
       });
     })

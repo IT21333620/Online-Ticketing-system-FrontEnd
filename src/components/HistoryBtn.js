@@ -85,13 +85,16 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function HistoryBtn() {
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 100, width: '100%' }}>
       {images.map((image) => (
-        <ImageButton
+        <ImageButton 
           focusRipple
           key={image.title}
           style={{
             width: image.width,
+            marginLeft:100,
+            marginBottom:30,
+            borderRadius:10
           }}
         >
           <Image src={history} />
