@@ -1,15 +1,15 @@
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import React from 'react'
+import { Link } from 'react-router-dom'
+import AssignBtn from '../components/AssignBtn'
 import EmployeeHeader from '../components/EmployeeHeader'
-import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import FraudPieChart from '../components/FraudPieChart'
 import InspectorBarChart from '../components/InspectorBarChart'
-import SearchInspector from '../components/SearchInspector'
 import InspectorTable from '../components/InspectorTable'
-import AssignBtn from '../components/AssignBtn'
-import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import Container from '@mui/material/Container';
-import './AssignInspectorDashboard.css';
-import { Link } from 'react-router-dom';
+import ResponsiveAppBar from '../components/ResponsiveAppBar'
+import SearchInspector from '../components/SearchInspector'
+import './AssignInspectorDashboard.css'
 
 
 

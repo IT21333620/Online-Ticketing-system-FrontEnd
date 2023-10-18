@@ -10,12 +10,9 @@ import AssignInspectorDashboard from './pages/AssignInspectorDashboard';
 import AssignInspector from './pages/AssignInspector';
 import InspectorDetails from './pages/InspectorDetails';
 import EditInspectDetails from './pages/EditInspectDetails';
-import PassengerOnlinePayment from './pages/PassengerOnlinePayment';
-import PassengerLogin from './pages/PassengerLogin';
 import DisplayCrowded from './components/DisplayCrowded';
 import AssignBus from './components/AssignBus';
 import DisplayWholeTimeTable from './components/DisplayWholeTimeTable';
-import { UserProvider } from './UserContext';
 
 
 function App() {
@@ -28,8 +25,8 @@ function App() {
         <Route path='/EmployeeLocalPay' element={<EmployeeLocalPay/>}></Route>
         <Route path='/AssignInspectorDashBoard' element={<AssignInspectorDashboard/>}></Route>
         <Route path='/AssignInspector' element={<AssignInspector/>}></Route>
-        <Route path='/InspectorDetails' element={<InspectorDetails/>}></Route>
-        <Route path='/EditInspectDetails'element={<EditInspectDetails/>}></Route>
+        <Route path='/InspectorDetails/:id' element={<InspectorDetails/>}></Route>
+        <Route path='/EditInspectDetails/:id'element={<EditInspectDetails/>}></Route>
         <Route path='/PassengerOnlinePayment' element={<PassengerOnlinePayment/>}></Route>
         <Route path='/PassengerLogin' element={<PassengerLogin/>}></Route>
         <Route path='/DisplayCrowded' element={<DisplayCrowded/>}></Route>

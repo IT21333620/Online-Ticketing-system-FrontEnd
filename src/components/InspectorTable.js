@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
 import { DataGrid } from "@mui/x-data-grid";
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function InspectorTable() {
@@ -22,6 +23,16 @@ const [inspectorData, setInspectorData] = useState([]);
     { field: "contactNo", headerName: "Contact No", width: 150 },
     { field: "userType", headerName: "User Type", width: 150 },
     { field: "inspectorID", headerName: "Inspector ID", width: 150 },
+    { 
+      field: "View", 
+      headerName: "Click to view", 
+      width: 150,
+      renderCell: (params) => (
+        <strong>
+          <Link to={`/InspectorDetails/${params.row.inspectorID}`}>View</Link>
+        </strong>
+      )
+    },
   ];
 
 
@@ -32,7 +43,7 @@ const [inspectorData, setInspectorData] = useState([]);
         columns={columns}
         pageSize={5}
         checkboxSelection
-        getRowId={(row) => row.userID} // Use a unique identifier here, either userID or inspectorID
+        getRowId={(row) => row.inspectorID} 
       />
     </div>
   );

@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
+import React, { useEffect, useState } from 'react';
 
 
 const chartSetting = {

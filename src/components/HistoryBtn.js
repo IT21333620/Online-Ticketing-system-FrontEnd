@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
+import { styled } from '@mui/material/styles';
+import React from 'react';
 import history from '../images/history.jpeg';
-import future from '../images/future.jpeg';
 
 const images = [
 
@@ -86,13 +85,16 @@ const ImageMarked = styled('span')(({ theme }) => ({
 
 export default function HistoryBtn() {
   return (
-    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+    <Box sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 100, width: '100%' }}>
       {images.map((image) => (
-        <ImageButton
+        <ImageButton 
           focusRipple
           key={image.title}
           style={{
             width: image.width,
+            marginLeft:100,
+            marginBottom:30,
+            borderRadius:10
           }}
         >
           <Image src={history} />
